@@ -95,7 +95,7 @@ class Subject extends React.Component {
         isLoading: false,
         data: responseJson
       }, () => {
-        
+
       });
     })
     .catch((error) =>{
@@ -148,7 +148,57 @@ class Subject extends React.Component {
 }
 
 class Topic extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = { isLoading: true }
+  }
+
+  componentDidMount(){
+    return fetch('https://coursecoachserver.herokuapp.com/topics', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        subject: this.props.navigation.state.params.subject
+      }),
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      this.setState({
+        isLoading: false,
+        data: responseJson
+      }, () => {
+        console.log(responseJson);
+      });
+    })
+    .catch((error) =>{
+      console.error(error);
+    });
+  }
+
+  handleClick = (url) => {
+    Linking.canOpenURL(url).then(supported => {
+      if (supported) {
+        Linking.openURL(url);
+      } else {
+        console.log("Don't know how to open URI: " + url);
+      }
+    });
+  };
+
   render() {
+    const { params } = this.props.navigation.state;
+
+    if(this.state.isLoading){
+      return(
+        <View style={{flex: 1, padding: 20}}>
+          <ActivityIndicator/>
+        </View>
+      )
+    }
+
     return (
       <View>
         <View style={styles.bar}>
@@ -157,6 +207,13 @@ class Topic extends React.Component {
             <Text style={styles.appTitle}>Course Coach</Text>
           </View>
         </View>
+        <ScrollView style={styles.main}>
+          {this.state.data.map( (x, i) => {
+
+            return <Text style={styles.links} onPress={ ()=>{ this.handleClick(x.link)}}>{i+1}. {x.name}</Text>;
+          })
+          }
+        </ScrollView>
       </View>
     );
   }
