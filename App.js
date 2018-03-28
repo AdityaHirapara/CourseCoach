@@ -73,7 +73,47 @@ class Home extends React.Component {
 }
 
 class Subject extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = { isLoading: true }
+  }
+
+  componentDidMount(){
+    return fetch('https://coursecoachserver.herokuapp.com/subjects', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        course: this.props.navigation.state.params.course
+      }),
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      this.setState({
+        isLoading: false,
+        data: responseJson
+      }, () => {
+        
+      });
+    })
+    .catch((error) =>{
+      console.error(error);
+    });
+  }
+
   render() {
+    const { params } = this.props.navigation.state;
+
+    if(this.state.isLoading){
+      return(
+        <View style={{flex: 1, padding: 20}}>
+          <ActivityIndicator/>
+        </View>
+      )
+    }
+
     return (
       <View>
         <View style={styles.bar}>
@@ -82,6 +122,26 @@ class Subject extends React.Component {
             <Text style={styles.appTitle}>Course Coach</Text>
           </View>
         </View>
+        <ScrollView style={styles.main}>
+          {this.state.data.map( (x) => {
+            switch (x) {
+              case 'Engineering Physics':
+                var icon = require('./images/physics.png');
+                break;
+              case 'Engineering Mechanics':
+                var icon = require('./images/mechanics.png');
+                break;
+              default:
+                var icon = require('./images/civil2.jpg');
+                break;
+            }
+            return <TouchableOpacity accessible={true} accessibilityLabel={'Tap me!'}
+              onPress={() => this.props.navigation.navigate('Topics', {
+                'subject': x
+              })}><BigCard title={x} src={icon} /></TouchableOpacity>;
+          })
+          }
+        </ScrollView>
       </View>
     );
   }
