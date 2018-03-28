@@ -23,48 +23,110 @@ class Home extends React.Component {
             })}>
               <SmallCard title='SEM I' src={require('./images/sem1.jpg')}/>
             </TouchableOpacity>
-            <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects')}>
+            <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+              'course': 'btech1'
+            })}>
               <SmallCard title='SEM II' src={require('./images/sem2.jpg')}/>
             </TouchableOpacity>
           </ScrollView>
           <Text style={styles.heading}>B.Tech II</Text>
           <ScrollView horizontal={true}>
-            <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects')}>
+            <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+              'course': 'btech1'
+            })}>
               <SmallCard title='Computer Engineering' src={require('./images/comp2.jpg')}/>
             </TouchableOpacity>
-            <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects')}>
+            <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+              'course': 'btech1'
+            })}>
               <SmallCard title='Mechanical Engineering' src={require('./images/mech2.jpg')}/>
             </TouchableOpacity>
-            <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects')}>
+            <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+              'course': 'btech1'
+            })}>
               <SmallCard title='Chemical Engineering' src={require('./images/chem2.jpg')}/>
             </TouchableOpacity>
-            <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects')}>
+            <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+              'course': 'btech1'
+            })}>
               <SmallCard title='Electrical Engineering' src={require('./images/elec2.png')}/>
             </TouchableOpacity>
-            <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects')}>
+            <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+              'course': 'btech1'
+            })}>
               <SmallCard title='Electronics Engineering' src={require('./images/ec2.jpg')}/>
             </TouchableOpacity>
-            <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects')}>
+            <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+              'course': 'btech1'
+            })}>
               <SmallCard title='Civil Engineering' src={require('./images/civil2.jpg')}/>
             </TouchableOpacity>
           </ScrollView>
           <Text style={styles.heading}>B.Tech III</Text>
           <ScrollView horizontal={true}>
+          <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+            'course': 'btech1'
+          })}>
             <SmallCard title='Computer Engineering' src={require('./images/comp2.jpg')}/>
+          </TouchableOpacity>
+          <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+            'course': 'btech1'
+          })}>
             <SmallCard title='Mechanical Engineering' src={require('./images/mech2.jpg')}/>
+          </TouchableOpacity>
+          <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+            'course': 'btech1'
+          })}>
             <SmallCard title='Chemical Engineering' src={require('./images/chem2.jpg')}/>
+          </TouchableOpacity>
+          <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+            'course': 'btech1'
+          })}>
             <SmallCard title='Electrical Engineering' src={require('./images/elec2.png')}/>
+          </TouchableOpacity>
+          <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+            'course': 'btech1'
+          })}>
             <SmallCard title='Electronics Engineering' src={require('./images/ec2.jpg')}/>
+          </TouchableOpacity>
+          <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+            'course': 'btech1'
+          })}>
             <SmallCard title='Civil Engineering' src={require('./images/civil2.jpg')}/>
+          </TouchableOpacity>
           </ScrollView>
           <Text style={styles.heading}>B.Tech IV</Text>
           <ScrollView horizontal={true}>
+          <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+            'course': 'btech1'
+          })}>
             <SmallCard title='Computer Engineering' src={require('./images/comp2.jpg')}/>
+          </TouchableOpacity>
+          <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+            'course': 'btech1'
+          })}>
             <SmallCard title='Mechanical Engineering' src={require('./images/mech2.jpg')}/>
+          </TouchableOpacity>
+          <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+            'course': 'btech1'
+          })}>
             <SmallCard title='Chemical Engineering' src={require('./images/chem2.jpg')}/>
+          </TouchableOpacity>
+          <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+            'course': 'btech1'
+          })}>
             <SmallCard title='Electrical Engineering' src={require('./images/elec2.png')}/>
+          </TouchableOpacity>
+          <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+            'course': 'btech1'
+          })}>
             <SmallCard title='Electronics Engineering' src={require('./images/ec2.jpg')}/>
+          </TouchableOpacity>
+          <TouchableOpacity accessible={true} onPress={() => this.props.navigation.navigate('Subjects', {
+            'course': 'btech1'
+          })}>
             <SmallCard title='Civil Engineering' src={require('./images/civil2.jpg')}/>
+          </TouchableOpacity>
           </ScrollView>
         </ScrollView>
       </View>
@@ -170,7 +232,7 @@ class Topic extends React.Component {
         isLoading: false,
         data: responseJson
       }, () => {
-        console.log(responseJson);
+
       });
     })
     .catch((error) =>{
