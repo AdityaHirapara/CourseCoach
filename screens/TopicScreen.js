@@ -153,7 +153,7 @@ export class Topic extends React.Component {
           <ScrollView style={styles.main}>
             {this.state.data.map( (x, i) => {
 
-              return <Text style={styles.links} onPress={ ()=>{ this._handleClick(x.link)}}>{i+1}. {x.name}</Text>;
+              return <View style={styles.linkContainer}><Text style={{paddingTop: 15, paddingLeft: 30, fontSize: 16}} >{i+1}.</Text><Text style={styles.links} onPress={ ()=>{ this._handleClick(x.link)}}> {x.name}</Text></View>;
             })
             }
           </ScrollView>

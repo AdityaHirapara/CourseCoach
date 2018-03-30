@@ -46,10 +46,14 @@ export const styles = StyleSheet.create({
   banner: {
     height: 160,
   },
+  linkContainer: {
+    flexDirection: 'row',
+  },
   links: {
     paddingTop: 15,
-    paddingLeft: 30,
-    fontSize: 16
+    paddingLeft: 5,
+    fontSize: 16,
+    textDecorationLine: 'underline',
   },
   menuHeader: {
     height: 150,
