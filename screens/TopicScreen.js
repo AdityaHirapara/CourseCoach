@@ -42,10 +42,26 @@ export class Topic extends React.Component {
         onPress={() => {
           this._drawerLayout.openDrawer();
         }}
-        style={styles.menuButtonContainer}>
+        style={topicStyle.menuButtonContainer}>
         <Image
           style={styles.menuButton}
           source={require('../images/ic_launcher.png')}
+        />
+      </TouchableOpacity>
+    );
+  }
+
+  _renderBackButton() {
+    return (
+      <TouchableOpacity
+        hitSlop={{ top: 15, left: 15, right: 15, bottom: 15 }}
+        onPress={() => {
+          this.props.navigation.goBack();
+        }}
+        style={topicStyle.backButtonContainer}>
+        <Image
+          style={styles.menuButton}
+          source={require('../images/ic_arrow_back.png')}
         />
       </TouchableOpacity>
     );
@@ -129,8 +145,9 @@ export class Topic extends React.Component {
           <View style={styles.bar}>
             <View style={styles.statusBar} />
             <View style={styles.titleBar}>
-              {this._renderMenuButton()}
+              {this._renderBackButton()}
               <Text style={styles.appTitle}>Course Coach</Text>
+              {this._renderMenuButton()}
             </View>
           </View>
           <ScrollView style={styles.main}>
@@ -143,5 +160,18 @@ export class Topic extends React.Component {
         </View>
       </DrawerLayout>
     );
+  }
+}
+
+const topicStyle = {
+  menuButtonContainer: {
+    position: 'absolute',
+    top: 15,
+    right: 20,
+  },
+  backButtonContainer: {
+    position: 'relative',
+    top: 5,
+    left: 10,
   }
 }
