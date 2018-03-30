@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { Text, View, Image } from 'react-native';
+import { styles } from '../styles/style';
 
 export class SmallCard extends React.Component {
   render() {
@@ -30,28 +31,3 @@ export class BigCard extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  card: {
-    margin: 15,
-    paddingBottom: 10,
-    alignItems: 'center',
-    elevation: 2,
-    borderRadius: 4,
-    overflow: 'hidden',
-  },
-  scard: {
-    width: 180,
-  },
-  bcard: {
-    flex: 1,
-    height: 220,
-  },
-  small: {
-    height: 120,
-    width: 176,
-  },
-  big: {
-    height: 180,
-  },
-});
