@@ -1,5 +1,15 @@
 {
   "expo": {
+    "name": "Course Coach",
+    "slug": "course-coach",
     "sdkVersion": "25.0.0",
+    "loading": {
+      "hideExponentText": true,
+      "icon": "./images/logo.png"
+    },
+    "orientation": "portrait",
+    "android": {
+      "package": "com.test.coursecoach"
+    },
   }
 }
