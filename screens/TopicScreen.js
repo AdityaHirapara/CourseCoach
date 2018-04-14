@@ -18,7 +18,8 @@ export class Topic extends React.Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        subject: this.props.navigation.state.params.subject
+        subject: this.props.navigation.state.params.subject,
+        course: this.props.navigation.state.params.course
       }),
     })
     .then((response) => response.json())
@@ -117,6 +118,18 @@ export class Topic extends React.Component {
     );
   }
 
+  _renderHeadingOne(){
+    if (this.state.data.books.length > 0) {
+      return (<View style={styles.linkContainer}><Text style={topicStyle.heading}>E-Books</Text></View>);
+    }
+  }
+
+  _renderHeadingTwo(){
+    if (this.state.data.papers.length > 0) {
+      return (<View style={styles.linkContainer}><Text style={topicStyle.heading}>Previous Year Papers</Text></View>);
+    }
+  }
+
   render() {
     const { params } = this.props.navigation.state;
 
@@ -145,11 +158,24 @@ export class Topic extends React.Component {
               {this._renderMenuButton()}
             </View>
           </View>
-          <ScrollView style={styles.main}>
-            {this.state.data.map( (x, i) => {
 
-              return <View style={styles.linkContainer}><Text style={{paddingTop: 15, paddingLeft: 30, fontSize: 16}} >{i+1}.</Text><Text style={styles.links} onPress={ ()=>{ this._handleClick(x.link)}}> {x.name}</Text></View>;
-            })
+          <ScrollView style={topicStyle.main}>
+            {
+              this.state.data.general.map( (x, i) => {
+                return <View style={styles.linkContainer}><Text style={{paddingBottom: 15, paddingLeft: 30, fontSize: 16}} >{i+1}.</Text><Text style={styles.links} onPress={ ()=>{ this._handleClick(x.link)}}> {x.name}</Text></View>;
+              })
+            }
+            { this._renderHeadingOne() }
+            {
+              this.state.data.books.map( (x, i) => {
+                return <View style={styles.linkContainer}><Text style={{paddingBottom: 15, paddingLeft: 30, fontSize: 16}} >{i+1}.</Text><Text style={styles.links} onPress={ ()=>{ this._handleClick(x.link)}}> {x.name}</Text></View>;
+              })
+            }
+            { this._renderHeadingTwo() }
+            {
+              this.state.data.papers.map( (x, i) => {
+                return <View style={styles.linkContainer}><Text style={{paddingBottom: 15, paddingLeft: 30, fontSize: 16}} >{i+1}.</Text><Text style={styles.links} onPress={ ()=>{ this._handleClick(x.link)}}> {x.name}</Text></View>;
+              })
             }
           </ScrollView>
         </View>
@@ -159,6 +185,16 @@ export class Topic extends React.Component {
 }
 
 const topicStyle = {
+  main: {
+    position: 'relative',
+    top: 80,
+    left: 0,
+    right: 0,
+    paddingTop: 10,
+    paddingRight: 20,
+    marginBottom: 90,
+    backgroundColor: '#f2f2f2',
+  },
   menuButtonContainer: {
     position: 'absolute',
     top: 15,
@@ -168,5 +204,13 @@ const topicStyle = {
     position: 'relative',
     top: 5,
     left: 10,
+  },
+  heading: {
+    marginTop: 30,
+    paddingBottom: 15,
+    marginLeft: 25,
+    fontSize: 18,
+    color: '#868682',
+    fontWeight: '100',
   }
 }

@@ -160,7 +160,8 @@ export class Subject extends React.Component {
               }
               return <TouchableOpacity accessible={true}
                 onPress={() => this.props.navigation.navigate('Topics', {
-                  'subject': x
+                  'subject': x,
+                  'course': this.props.navigation.state.params.course
                 })}><BigCard title={x} src={icon} /></TouchableOpacity>;
             })
             }

@@ -34,6 +34,7 @@ export const styles = StyleSheet.create({
     left: 0,
     right: 0,
     paddingTop: 10,
+    paddingBottom: 10,
     marginBottom: 90,
     backgroundColor: '#f2f2f2',
   },
@@ -57,7 +58,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   links: {
-    paddingTop: 15,
+    paddingBottom: 15,
     paddingLeft: 5,
     fontSize: 16,
     textDecorationLine: 'underline',
