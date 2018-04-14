@@ -43,6 +43,13 @@ export const styles = StyleSheet.create({
     color: '#868682',
     fontWeight: '100',
   },
+  logo: {
+    height: 45,
+    width: 45,
+    marginRight: 10,
+    marginTop: 5,
+    justifyContent: 'center',
+  },
   banner: {
     height: 160,
   },
@@ -56,9 +63,10 @@ export const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
   menuHeader: {
-    height: 150,
+    flexDirection: 'row',
     justifyContent: 'center',
-    padding: 20,
+    padding: 15,
+    paddingLeft: 5,
     paddingTop: 50,
   },
   menuHeaderBackground: {
@@ -77,10 +85,16 @@ export const styles = StyleSheet.create({
     right: 0,
   },
   menuHeaderText: {
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontSize: 30,
     color: '#fff',
     backgroundColor: 'transparent',
+  },
+  menuTag: {
+    fontSize: 14,
+    color: '#fff',
+    paddingLeft: 78,
+    paddingBottom: 20,
+    top: -24,
   },
   menuButtonContainer: {
     position: 'relative',
@@ -92,20 +106,21 @@ export const styles = StyleSheet.create({
     height: 28.5,
   },
   menulink: {
-    fontSize: 16,
+    fontSize: 18,
+    color: '#fff',
+    paddingLeft: 4,
   },
   linkicon: {
     position: 'relative',
-    top: -3,
+    top: -4,
     left: 0,
-    height: 30,
-    width: 30,
+    height: 32,
+    width: 32,
   },
   menutab: {
     padding: 5,
-    paddingLeft: 18,
+    paddingLeft: 14,
     paddingBottom: 2,
-    borderBottomWidth: 0.4,
     flexDirection: 'row',
   },
   card: {

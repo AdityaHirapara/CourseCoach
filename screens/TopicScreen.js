@@ -86,35 +86,30 @@ export class Topic extends React.Component {
 
   _renderMenu() {
     return (
-      <View style={{ backgroundColor: '#F9F9F9', flex: 1 }}>
+      <View style={{ backgroundColor: '#18344a', flex: 1 }}>
         <View style={styles.menuHeader}>
-          <Image
-            resizeMode="cover"
-            style={styles.menuHeaderBackground}
-            source={require('../images/bg.jpg')}
-          />
-          <View style={styles.menuHeaderOverlay} />
-
+          <Image style={styles.logo} source={require('../images/logo.png')} />
           <Text style={styles.menuHeaderText}>Course Coach</Text>
         </View>
+        <Text style={styles.menuTag}>A way to conquer your Course.</Text>
         <TouchableOpacity accessible={true}
         onPress={() => this._shareApp()}>
           <View style={styles.menutab}>
-            <Image source={require('../images/ic_near_me.png')} style={styles.linkicon}/>
+            <Image source={require('../images/ic_near_me1.png')} style={styles.linkicon}/>
             <Text style={styles.menulink}>Share us</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity accessible={true}
         onPress={ ()=>{ this._handleClick('https://play.google.com/store/apps/details?id=com.coursecoach.blog&hl=en')}}>
           <View style={styles.menutab}>
-            <Image source={require('../images/ic_star.png')} style={styles.linkicon}/>
+            <Image source={require('../images/ic_star1.png')} style={styles.linkicon}/>
             <Text style={styles.menulink}>Rate us</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity accessible={true}
         onPress={ ()=>{ this._handleClick('mailto:coursecoach1998@gmail.com')}}>
           <View style={styles.menutab}>
-            <Image source={require('../images/ic_comment.png')} style={styles.linkicon}/>
+            <Image source={require('../images/ic_comment1.png')} style={styles.linkicon}/>
             <Text style={styles.menulink}>Feedback</Text>
           </View>
         </TouchableOpacity>
@@ -138,7 +133,7 @@ export class Topic extends React.Component {
         ref={view => {
           this._drawerLayout = view;
         }}
-        drawerWidth={Dimensions.get('window').width - 100}
+        drawerWidth={Dimensions.get('window').width - 70}
         renderNavigationView={this._renderMenu.bind(this)}>
 
         <View style={{flex: 1}}>
