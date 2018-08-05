@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, ActivityIndicator, Linking, Dimensions, Share } from 'react-native';
+import { StyleSheet, Text,TouchableNativeFeedback, View, Image, ScrollView, TouchableOpacity, ActivityIndicator, Linking, Dimensions, Share } from 'react-native';
 import { BigCard, SmallCard } from '../elements/card';
 import DrawerLayout from 'react-native-drawer-layout';
 import { styles } from '../styles/style';
+import { Bars } from 'react-native-loader';
 
 export class Topic extends React.Component {
   constructor(props){
@@ -120,13 +121,13 @@ export class Topic extends React.Component {
 
   _renderHeadingOne(){
     if (this.state.data.books.length > 0) {
-      return (<View style={styles.linkContainer}><Text style={topicStyle.heading}>E-Books</Text></View>);
+      return (<View style={styles.topicHeading}><Text style={topicStyle.heading}>E-Books</Text></View>);
     }
   }
 
   _renderHeadingTwo(){
     if (this.state.data.papers.length > 0) {
-      return (<View style={styles.linkContainer}><Text style={topicStyle.heading}>Previous Year Papers</Text></View>);
+      return (<View style={styles.topicHeading}><Text style={topicStyle.heading}>Previous Year Papers</Text></View>);
     }
   }
 
@@ -135,8 +136,8 @@ export class Topic extends React.Component {
 
     if(this.state.isLoading){
       return(
-        <View style={{flex: 1, padding: 20}}>
-          <ActivityIndicator/>
+        <View style={styles.loader}>
+          <Bars size={15} color="#101c25" spaceBetween={5}/>
         </View>
       )
     }
@@ -161,21 +162,42 @@ export class Topic extends React.Component {
 
           <ScrollView style={topicStyle.main}>
             {
-              this.state.data.general.map( (x, i) => {
-                return <View style={styles.linkContainer}><Text style={{paddingBottom: 15, paddingLeft: 30, fontSize: 16}} >{i+1}.</Text><Text style={styles.links} onPress={ ()=>{ this._handleClick(x.link)}}> {x.name}</Text></View>;
-              })
+              this.state.data.general.map( (x, i) => 
+                  <TouchableNativeFeedback
+                    onPress={ ()=>{ this._handleClick(x.link)}}
+                    background={TouchableNativeFeedback.SelectableBackground()}>
+                    <View style={styles.linkContainer}>
+                      <Text style={{paddingBottom: 15, paddingLeft: 30, fontSize: 16}} >{i+1}.</Text>
+                      <Text style={styles.links}> {x.name}</Text>
+                    </View>
+                  </TouchableNativeFeedback>
+              )
             }
             { this._renderHeadingOne() }
             {
-              this.state.data.books.map( (x, i) => {
-                return <View style={styles.linkContainer}><Text style={{paddingBottom: 15, paddingLeft: 30, fontSize: 16}} >{i+1}.</Text><Text style={styles.links} onPress={ ()=>{ this._handleClick(x.link)}}> {x.name}</Text></View>;
-              })
+              this.state.data.books.map( (x, i) => 
+                  <TouchableNativeFeedback
+                    onPress={ ()=>{ this._handleClick(x.link)}}
+                    background={TouchableNativeFeedback.SelectableBackground()}>
+                    <View style={styles.linkContainer}>
+                      <Text style={{paddingBottom: 15, paddingLeft: 30, fontSize: 16}} >{i+1}.</Text>
+                      <Text style={styles.links}> {x.name}</Text>
+                    </View>
+                  </TouchableNativeFeedback>
+              )
             }
             { this._renderHeadingTwo() }
             {
-              this.state.data.papers.map( (x, i) => {
-                return <View style={styles.linkContainer}><Text style={{paddingBottom: 15, paddingLeft: 30, fontSize: 16}} >{i+1}.</Text><Text style={styles.links} onPress={ ()=>{ this._handleClick(x.link)}}> {x.name}</Text></View>;
-              })
+              this.state.data.papers.map( (x, i) => 
+                  <TouchableNativeFeedback
+                    onPress={ ()=>{ this._handleClick(x.link)}}
+                    background={TouchableNativeFeedback.SelectableBackground()}>
+                    <View style={styles.linkContainer}>
+                      <Text style={{paddingBottom: 15, paddingLeft: 30, fontSize: 16}} >{i+1}.</Text>
+                      <Text style={styles.links}> {x.name}</Text>
+                    </View>
+                  </TouchableNativeFeedback>
+              )
             }
           </ScrollView>
         </View>
@@ -191,9 +213,9 @@ const topicStyle = {
     left: 0,
     right: 0,
     paddingTop: 10,
-    paddingRight: 20,
+    paddingBottom: 10,
     marginBottom: 90,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#fff',
   },
   menuButtonContainer: {
     position: 'absolute',

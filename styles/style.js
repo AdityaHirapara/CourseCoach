@@ -1,9 +1,9 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 export const styles = StyleSheet.create({
   statusBar: {
     height: 24,
-    backgroundColor: '#18344a'
+    backgroundColor: '#101c25'
   },
   bar: {
     position: 'absolute',
@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     left: 0,
     right: 0,
     height: 80,
-    backgroundColor: '#fff',
+    backgroundColor: '#18344a',
     elevation: 0,
     borderBottomWidth: 0.4,
     borderColor: '#b1b1b0',
@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   appTitle: {
-    color: '#f79449',
+    color: '#fff',
     fontSize: 24,
     paddingTop: 3,
     paddingLeft: 20,
@@ -33,10 +33,15 @@ export const styles = StyleSheet.create({
     top: 80,
     left: 0,
     right: 0,
-    paddingTop: 10,
+    paddingTop: 0,
     paddingBottom: 10,
     marginBottom: 90,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#fff',
+  },
+  loader: {
+    position: 'relative',
+    left: Dimensions.get('window').width/2 - 15,
+    top: Dimensions.get('window').height/2 - 20
   },
   heading: {
     marginLeft: 15,
@@ -55,13 +60,20 @@ export const styles = StyleSheet.create({
     height: 160,
   },
   linkContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    paddingTop: 5,
+    borderBottomWidth: 0.4,
+    borderColor: '#b1b1b0',
+  },
+  topicHeading: {
     flexDirection: 'row',
   },
   links: {
-    paddingBottom: 15,
+    paddingBottom: 5,
     paddingLeft: 5,
     fontSize: 16,
-    textDecorationLine: 'underline',
+    width: Dimensions.get('window').width-60
   },
   menuHeader: {
     flexDirection: 'row',
@@ -137,13 +149,24 @@ export const styles = StyleSheet.create({
   },
   bcard: {
     flex: 1,
-    height: 220,
+    flexDirection: 'row',
+    height: 50,
+    margin: 0,
+    borderRadius: 0,
+    paddingBottom: 0,
+    elevation: 0,
+    borderBottomWidth: 0.4,
+    borderColor: '#b1b1b0',
   },
   small: {
     height: 120,
     width: 176,
   },
   big: {
-    height: 180,
+    height: 40,
+    width: 40,
+    margin: 5,
+    marginRight: 15,
+    borderRadius: 20,
   },
 });

@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, ActivityIn
 import { BigCard, SmallCard } from '../elements/card';
 import DrawerLayout from 'react-native-drawer-layout';
 import { styles } from '../styles/style';
+import { Bars } from 'react-native-loader';
 
 export class Subject extends React.Component {
   constructor(props){
@@ -122,8 +123,8 @@ export class Subject extends React.Component {
 
     if(this.state.isLoading){
       return(
-        <View style={{flex: 1, padding: 20}}>
-          <ActivityIndicator/>
+        <View style={styles.loader}>
+          <Bars size={15} color="#101c25" spaceBetween={5}/>
         </View>
       )
     }
@@ -146,16 +147,44 @@ export class Subject extends React.Component {
             </View>
           </View>
           <ScrollView style={styles.main}>
-            {this.state.data.map( (x) => {
-              switch (x) {
-                case 'Engineering Physics':
-                  var icon = require('../images/physics.png');
+            {this.state.data.map( (x, i) => {
+              i++;
+              switch (i) {
+                case 1:
+                  var icon = require('../images/1.jpg');
                   break;
-                case 'Engineering Mechanics':
-                  var icon = require('../images/mechanics.png');
+                case 2:
+                  var icon = require('../images/2.jpg');
                   break;
-                default:
-                  var icon = require('../images/civil2.jpg');
+                case 3:
+                  var icon = require('../images/3.jpg');
+                  break;
+                case 4:
+                  var icon = require('../images/4.jpg');
+                  break;
+                case 5:
+                  var icon = require('../images/5.jpg');
+                  break;
+                case 6:
+                  var icon = require('../images/6.jpg');
+                  break;
+                case 7:
+                  var icon = require('../images/7.jpg');
+                  break;
+                case 8:
+                  var icon = require('../images/8.jpg');
+                  break;
+                case 9:
+                  var icon = require('../images/9.jpg');
+                  break;
+                case 10:
+                  var icon = require('../images/10.jpg');
+                  break;
+                case 11:
+                  var icon = require('../images/11.jpg');
+                  break;
+                case 12:
+                  var icon = require('../images/12.jpg');
                   break;
               }
               return <TouchableOpacity accessible={true}
