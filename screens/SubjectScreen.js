@@ -147,6 +147,9 @@ export class Subject extends React.Component {
             </View>
           </View>
           <ScrollView style={styles.main}>
+
+            <AdBanner/>
+            
             {this.state.data.map( (x, i) => {
               i++;
               switch (i) {

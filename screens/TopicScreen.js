@@ -161,6 +161,9 @@ export class Topic extends React.Component {
           </View>
 
           <ScrollView style={topicStyle.main}>
+
+            <AdBanner/>
+            
             {
               this.state.data.general.map( (x, i) => 
                   <TouchableNativeFeedback

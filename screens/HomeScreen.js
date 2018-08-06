@@ -3,13 +3,7 @@ import { StyleSheet, Text, Button, View, Image, ScrollView, TouchableOpacity, Ac
 import { BigCard, SmallCard } from '../elements/card';
 import DrawerLayout from 'react-native-drawer-layout';
 import { styles } from '../styles/style';
-import {
-  AdMobBanner,
-  AdMobInterstitial,
-  PublisherBanner,
-  AdMobRewarded
-} from 'expo';
-
+import { AdBanner } from '../elements/addbanner';
 export class Home extends React.Component {
 
   _renderMenuButton() {
@@ -97,10 +91,8 @@ export class Home extends React.Component {
             </View>
           </View>
           <ScrollView style={styles.main}>
-          <AdMobBanner
-            bannerSize="fullBanner"
-            adUnitID="ca-app-pub-3940256099942544/6300978111" // Test ID, Replace with your-admob-unit-id
-            onDidFailToReceiveAdWithError={this.bannerError} />
+          
+          <AdBanner/>
 
             <Text style={styles.heading}>B.Tech I</Text>
             <ScrollView horizontal={true}>
