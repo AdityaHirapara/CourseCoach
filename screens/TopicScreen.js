@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text,TouchableNativeFeedback, View, Image, ScrollView, TouchableOpacity, ActivityIndicator, Linking, Dimensions, Share } from 'react-native';
-import { BigCard, SmallCard } from '../elements/card';
+import { StyleSheet, Text, TouchableNativeFeedback, View, Image, ScrollView, TouchableOpacity, Linking, Dimensions, Share } from 'react-native';
 import DrawerLayout from 'react-native-drawer-layout';
 import { styles } from '../styles/style';
 import { Bars } from 'react-native-loader';
+import { AdBanner } from '../elements/adbanner';
 
 export class Topic extends React.Component {
   constructor(props){
@@ -163,7 +163,7 @@ export class Topic extends React.Component {
           <ScrollView style={topicStyle.main}>
 
             <AdBanner/>
-            
+
             {
               this.state.data.general.map( (x, i) => 
                   <TouchableNativeFeedback
@@ -215,9 +215,8 @@ const topicStyle = {
     top: 80,
     left: 0,
     right: 0,
-    paddingTop: 10,
-    paddingBottom: 10,
-    marginBottom: 90,
+    paddingBottom: 20,
+    marginBottom: 80,
     backgroundColor: '#fff',
   },
   menuButtonContainer: {

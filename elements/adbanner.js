@@ -1,5 +1,6 @@
 import { AdMobBanner } from 'expo';
 import React from 'react';
+import { View } from 'react-native';
 
 export class AdBanner extends React.Component {
   render() {

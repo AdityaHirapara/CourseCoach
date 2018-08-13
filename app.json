@@ -2,6 +2,7 @@
   "expo": {
     "name": "Course Coach",
     "slug": "course-coach",
+    "version": "2.0.0",
     "sdkVersion": "25.0.0",
     "loading": {
       "hideExponentText": true,
@@ -11,5 +12,8 @@
     "android": {
       "package": "com.test.coursecoach"
     },
-  }
+  },
+  "name": "CourseCoach",
+  "displayName": "Course Coach",
+  "versionCode": 17
 }

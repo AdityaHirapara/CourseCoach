@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, Button, View, Image, ScrollView, TouchableOpacity, ActivityIndicator, Linking, Dimensions, Share } from 'react-native';
-import { BigCard, SmallCard } from '../elements/card';
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Linking, Dimensions, Share } from 'react-native';
+import { SmallCard } from '../elements/card';
 import DrawerLayout from 'react-native-drawer-layout';
 import { styles } from '../styles/style';
-import { AdBanner } from '../elements/addbanner';
+import { AdBanner } from '../elements/adbanner';
+
 export class Home extends React.Component {
 
   _renderMenuButton() {

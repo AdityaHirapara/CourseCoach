@@ -34,8 +34,8 @@ export const styles = StyleSheet.create({
     left: 0,
     right: 0,
     paddingTop: 0,
-    paddingBottom: 10,
-    marginBottom: 90,
+    paddingBottom: 20,
+    marginBottom: 80,
     backgroundColor: '#fff',
   },
   loader: {

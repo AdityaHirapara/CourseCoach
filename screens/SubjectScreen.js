@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, ActivityIndicator, Linking, Dimensions, Share } from 'react-native';
-import { BigCard, SmallCard } from '../elements/card';
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Linking, Dimensions, Share } from 'react-native';
+import { BigCard } from '../elements/card';
 import DrawerLayout from 'react-native-drawer-layout';
 import { styles } from '../styles/style';
 import { Bars } from 'react-native-loader';
+import { AdBanner } from '../elements/adbanner';
 
 export class Subject extends React.Component {
   constructor(props){
@@ -149,7 +150,7 @@ export class Subject extends React.Component {
           <ScrollView style={styles.main}>
 
             <AdBanner/>
-            
+
             {this.state.data.map( (x, i) => {
               i++;
               switch (i) {
