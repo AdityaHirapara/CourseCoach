@@ -1,13 +1,12 @@
 <h1  align='center'>
 CourseCoach</h1> 
 <p align='center'>
-<img src='./images/logo.png' >
+  <img src='./images/logo.png' >
 </p>
+<p align='center'><i align='center'>A way to conquer your Course. </i></p>
 <h4 align='center'>
 A mobile app built using React Native, which provides course contents to B.Tech students. 
 </h4> 
-<p align='center'><i align='center'>A way to conquere your course. </i></p>
-
 
 ## Get the app
 
@@ -15,6 +14,16 @@ Release versions of the app are available here:
 
 * [CourseCoach for Android](https://play.google.com/store/apps/details?id=com.coursecoach.blog)
   on the Google Play Store
+
+## Screenshots
+
+<table>
+  <tr>
+    <td><img src="https://user-images.githubusercontent.com/27485533/45479636-a81ebf00-b764-11e8-9ca7-42ad9c276ee7.png"></td>
+    <td><img src="https://user-images.githubusercontent.com/27485533/45479638-a94fec00-b764-11e8-8847-1598b284660c.png"></td>
+    <td><img src="https://user-images.githubusercontent.com/27485533/45479639-a94fec00-b764-11e8-94b5-9a5af8dd87c0.png"></td>
+  </tr>
+</table>
 
 # Development
 
