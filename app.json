@@ -1,19 +1,4 @@
 {
-  "expo": {
-    "name": "Course Coach",
-    "slug": "course-coach",
-    "version": "2.0.0",
-    "sdkVersion": "25.0.0",
-    "loading": {
-      "hideExponentText": true,
-      "icon": "./images/logo.png"
-    },
-    "orientation": "portrait",
-    "android": {
-      "package": "com.test.coursecoach"
-    },
-  },
   "name": "CourseCoach",
-  "displayName": "Course Coach",
-  "versionCode": 17
+  "displayName": "CourseCoach"
 }

@@ -11,7 +11,7 @@ export class SmallCard extends React.Component {
           source={this.props.src}
           style={styles.small}
         />
-        <Text>{this.props.title}</Text>
+        <Text style={{color: "black"}}>{this.props.title}</Text>
       </View>
     );
   }
@@ -26,7 +26,7 @@ export class BigCard extends React.Component {
           source={this.props.src}
           style={styles.big}
         />
-        <Text>{this.props.title}</Text>
+        <Text style={{color: "black"}}>{this.props.title}</Text>
       </View>
     );
   }

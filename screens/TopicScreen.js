@@ -3,7 +3,9 @@ import { StyleSheet, Text, TouchableNativeFeedback, View, Image, ScrollView, Tou
 import DrawerLayout from 'react-native-drawer-layout';
 import { styles } from '../styles/style';
 import { Bars } from 'react-native-loader';
-import { AdBanner } from '../elements/adbanner';
+import { _renderMenu } from '../utils/menu';
+import { _handleClick } from '../utils/handler';
+import { AdBanner } from '../elements/adBanner';
 
 export class Topic extends React.Component {
   constructor(props){
@@ -69,23 +71,6 @@ export class Topic extends React.Component {
     );
   }
 
-  _shareApp() {
-    Share.share({
-        message: 'Take a look at "Course Coach" \n https://play.google.com/store/apps/details?id=com.coursecoach.blog'
-      })
-      .catch(errorMsg => console.log(errorMsg));
-  }
-
-  _handleClick = (url) => {
-    Linking.canOpenURL(url).then(supported => {
-      if (supported) {
-        Linking.openURL(url);
-      } else {
-        console.log("Don't know how to open URI: " + url);
-      }
-    });
-  };
-
   _renderMenu() {
     return (
       <View style={{ backgroundColor: '#18344a', flex: 1 }}>
@@ -117,6 +102,13 @@ export class Topic extends React.Component {
         </TouchableOpacity>
       </View>
     );
+  }
+
+  _shareApp() {
+    Share.share({
+        message: 'Take a look at "Course Coach" \n https://play.google.com/store/apps/details?id=com.coursecoach.blog'
+      })
+      .catch(errorMsg => console.log(errorMsg));
   }
 
   _renderHeadingOne(){
@@ -152,7 +144,6 @@ export class Topic extends React.Component {
 
         <View style={{flex: 1}}>
           <View style={styles.bar}>
-            <View style={styles.statusBar} />
             <View style={styles.titleBar}>
               {this._renderBackButton()}
               <Text style={styles.appTitle}>Course Coach</Text>
@@ -162,12 +153,12 @@ export class Topic extends React.Component {
 
           <ScrollView style={topicStyle.main}>
 
-            <AdBanner/>
+          <AdBanner/>
 
             {
               this.state.data.general.map( (x, i) => 
                   <TouchableNativeFeedback
-                    onPress={ ()=>{ this._handleClick(x.link)}}
+                    onPress={ ()=>{ _handleClick(x.link)}}
                     background={TouchableNativeFeedback.SelectableBackground()}>
                     <View style={styles.linkContainer}>
                       <Text style={{paddingBottom: 15, paddingLeft: 30, fontSize: 16}} >{i+1}.</Text>
@@ -180,7 +171,7 @@ export class Topic extends React.Component {
             {
               this.state.data.books.map( (x, i) => 
                   <TouchableNativeFeedback
-                    onPress={ ()=>{ this._handleClick(x.link)}}
+                    onPress={ ()=>{ _handleClick(x.link)}}
                     background={TouchableNativeFeedback.SelectableBackground()}>
                     <View style={styles.linkContainer}>
                       <Text style={{paddingBottom: 15, paddingLeft: 30, fontSize: 16}} >{i+1}.</Text>
@@ -193,7 +184,7 @@ export class Topic extends React.Component {
             {
               this.state.data.papers.map( (x, i) => 
                   <TouchableNativeFeedback
-                    onPress={ ()=>{ this._handleClick(x.link)}}
+                    onPress={ ()=>{ _handleClick(x.link)}}
                     background={TouchableNativeFeedback.SelectableBackground()}>
                     <View style={styles.linkContainer}>
                       <Text style={{paddingBottom: 15, paddingLeft: 30, fontSize: 16}} >{i+1}.</Text>
@@ -212,11 +203,11 @@ export class Topic extends React.Component {
 const topicStyle = {
   main: {
     position: 'relative',
-    top: 80,
+    top: 56,
     left: 0,
     right: 0,
     paddingBottom: 20,
-    marginBottom: 80,
+    marginBottom: 60,
     backgroundColor: '#fff',
   },
   menuButtonContainer: {

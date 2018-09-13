@@ -4,7 +4,7 @@ import { BigCard } from '../elements/card';
 import DrawerLayout from 'react-native-drawer-layout';
 import { styles } from '../styles/style';
 import { Bars } from 'react-native-loader';
-import { AdBanner } from '../elements/adbanner';
+import { AdBanner } from '../elements/adBanner';
 
 export class Subject extends React.Component {
   constructor(props){
@@ -140,7 +140,6 @@ export class Subject extends React.Component {
 
         <View style={{flex: 1}}>
           <View style={styles.bar}>
-            <View style={styles.statusBar} />
             <View style={styles.titleBar}>
               {this._renderBackButton()}
               <Text style={styles.appTitle}>Course Coach</Text>
@@ -149,7 +148,7 @@ export class Subject extends React.Component {
           </View>
           <ScrollView style={styles.main}>
 
-            <AdBanner/>
+          <AdBanner/>
 
             {this.state.data.map( (x, i) => {
               i++;
@@ -189,6 +188,9 @@ export class Subject extends React.Component {
                   break;
                 case 12:
                   var icon = require('../images/12.jpg');
+                  break;
+                default:
+                  var icon = require('../images/logo.png');
                   break;
               }
               return <TouchableOpacity accessible={true}

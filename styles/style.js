@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    height: 80,
+    height: 56,
     backgroundColor: '#18344a',
     elevation: 0,
     borderBottomWidth: 0.4,
@@ -30,12 +30,12 @@ export const styles = StyleSheet.create({
   },
   main: {
     position: 'relative',
-    top: 80,
+    top: 56,
     left: 0,
     right: 0,
     paddingTop: 0,
     paddingBottom: 20,
-    marginBottom: 80,
+    marginBottom: 0,
     backgroundColor: '#fff',
   },
   loader: {

@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Linking, D
 import { SmallCard } from '../elements/card';
 import DrawerLayout from 'react-native-drawer-layout';
 import { styles } from '../styles/style';
-import { AdBanner } from '../elements/adbanner';
+import { AdBanner } from '../elements/adBanner';
 
 export class Home extends React.Component {
 
@@ -85,7 +85,6 @@ export class Home extends React.Component {
 
         <View style={{flex: 1}}>
           <View style={styles.bar}>
-            <View style={styles.statusBar} />
             <View style={styles.titleBar}>
               {this._renderMenuButton()}
               <Text style={styles.appTitle}>Course Coach</Text>
